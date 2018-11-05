@@ -1,0 +1,138 @@
+<div class="container-con">
+  <div class="pull-right fix-esc" [routerLink]="['../home']">
+    <i class="fa fa-close cls-btnn"></i><span class="close-btn">esc</span>
+
+  </div>
+  <div class="container-con-form">
+    <div id="admin_invites_alert" class="align_center alert">
+      <p class="inline">
+        <i class="fa fa-user-plus"></i>
+        <!-- <ts-icon class="ts_icon_add_user very_small_right_margin blue_fill"></ts-icon> -->
+        Workspaces with paid plans can also invite <span class="bold">guests</span>, like contractors, vendors, or
+        clients.
+      </p>
+      <a id="invites_alert_see_pricing_cta" class="no_underline text-dec" href="/pricing?ui_step=66&amp;ui_element=5"
+        data-clog-event="GROWTH_PRICING" data-clog-ui-element="pricing_link" data-clog-ui-action="click"
+        data-clog-ui-step="admin_invites">See pricing
+        plans
+      </a>
+    </div>
+    <div class="body-wrap">
+
+
+      <h1 id="header_invite" class="size-font"><i class="fa fa-paper-plane-o"></i>
+        <span class="light-font">Invite Members to
+          <span class="heavy-font">insightworkshop</span></span></h1>
+    </div>
+    <form #sendInvitationForm="ngForm">
+      <div class="body-table">
+
+        <div class="table-header">
+          <div class="col col1">
+            <label class="email-aadr">Email Address <br>
+            </label>
+          </div>
+
+          <div class="col col2">
+            <label class="email-aadr">Full Name (optional) <br>
+            </label>
+          </div>
+        </div>
+        <div class="table-header tb2" id="show-block">
+          <div class="col col1">
+            <div class="full-width">
+              <input type="text" spellcheck="false" autocorrect="off" ngModel class="email_field small form-control"
+                name="email_address0" placeholder="name@example.com" data-email-healing="true" type="text">
+            </div>
+          </div>
+
+          <div class="col col2">
+            <div class="full-width">
+              <input name="real_name" placeholder="Optional" class="small small_right_margin no_bottom_margin full_width form-control"
+                maxlength="200" type="text">
+            </div>
+            <a class="delete_row dt2" data-action="admin_invites_delete_row"><i class="fa fa-close cls-btn" role="button"
+                (click)="closeBlock()"></i></a>
+          </div>
+        </div>
+        <div class="table-header tb2" id="show-block">
+          <div class="col col1">
+            <div class="full-width">
+              <input spellcheck="false" autocorrect="off" class="email_field small form-control" name="email_address1"
+                placeholder="name@example.com" data-email-healing="true" type="text">
+            </div>
+          </div>
+
+          <div class="col col2">
+            <div class="full-width">
+              <input name="real_name" placeholder="Optional" class="small small_right_margin no_bottom_margin full_width form-control"
+                maxlength="200" type="text">
+            </div>
+            <a class="delete_row dt2" data-action="admin_invites_delete_row"><i class="fa fa-close cls-btn" role="button"
+                (click)="closeBlock()"></i></a>
+          </div>
+        </div>
+
+        <div class="table-header tb2" *ngFor="let container of containers;let i = index" id="show-block">
+          <div class="col col1">
+            <div class="full-width">
+              <input spellcheck="false" autocorrect="off" class="email_field small form-control" name="email_address{{i+1}}"
+                placeholder="name@example.com" data-email-healing="true" type="text">
+            </div>
+          </div>
+
+          <div class="col col2">
+            <div class="full-width">
+              <input name="real_name" placeholder="Optional" class="small small_right_margin no_bottom_margin full_width form-control"
+                maxlength="200" type="text">
+            </div>
+            <a class="delete_row dt2" data-action="admin_invites_delete_row"><i class="fa fa-close cls-btn" role="button"
+                (click)="closeBlock()"></i></a>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="add-row" id="add-htmlblock">
+
+      <a data-action="admin_invites_add_row" data-clog-click="true" (click)="add()" id="btnadd" data-clog-event="INVITEMODAL_ACTION"
+        data-clog-params="action=add_row,trigger=click_cta_add_row" tabindex="0"><i class="fa fa-plus-circle" role="button"></i>Add
+        another</a> or
+      <a data-action="admin_invites_switch_view" data-view="bulk" data-clog-click="true" data-clog-event="INVITEMODAL_ACTION"
+        data-clog-params="action=switch_view_to_bulk,trigger=click_cta_switch_view_to_bulk" tabindex="0">add many at
+        once</a>
+      <span id="btn_connect_contacts" class="float-right greigh" aria-disabled="false">
+        <i class="fa fa-google" aria-hidden="true"></i>
+        <span class="btn_connect_contacts_text">
+          Connect <a data-clog-click="true" data-clog-event="INVITEMODAL_ACTION" data-clog-params="action=connect_google_contacts,trigger=click_connect_address_book_btn"
+            tabindex="0" class="greigh underline link_color">Google Contacts</a>
+        </span>
+      </span>
+    </div>
+    <div class="members_channel">
+      <label>
+        Default Channels
+      </label>
+      <div class="no_bottom_margin">
+        <p id="default_channels_note" class="greigh ">
+          New <strong>members</strong> will automatically join <strong>general</strong> and <strong>random</strong>
+        </p>
+      </div>
+    </div>
+
+
+    <div class="share_invite_link_container con">
+      <a id="create_or_share_invite_link" href="#" data-action="create_or_share_invite_link">
+        <i id="create_or_share_invite_link_icon" class="fa fa-link"></i>
+        <span id="create_or_share_invite_link_text">Get an invite link to share</span>
+      </a>
+
+      <button type="submit" id="admin_invites_submit_btn" (click)="sendEmail(sendInvitationForm.value)" class="btn btn_large btn-success ladda-button ladda"
+        data-action="api_send_invites" data-style="expand-right">
+        <span class="ladda-label" data-clog-click="true" data-clog-event="INVITEMODAL_ACTION" data-clog-params="action=invite,trigger=click_cta_submit_btn">Send
+          Invitations
+        </span>
+        <span class="ladda-spinner"></span>
+      </button>
+    </div>
+  </div>
+</div>

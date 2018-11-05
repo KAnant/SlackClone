@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* .nav-wrapper i{
+    height: 25px !important;
+    line-height: 55px !important;
+} */
+body {
+font-family: Slack-Lato,appleLogo,sans-serif;
+line-height: 1.5rem;
+/* background-color: #f8f8f8; */
+}

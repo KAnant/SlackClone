@@ -1,0 +1,125 @@
+<nav class="top-nav">
+  <div class="nav-wrapper">
+    <ul id="nav-mobile" class="left hide-on-med-and-down">
+      <li class="menu line menu-line"><a href="#" class=""><i class="fa fa-bars"></i>Menu</a></li>
+      <li class="menu"><span><a href="#" class=""><i class="fa fa-home"></i>insightworkshop</a></span></li>
+
+      <span class="pull-right fix-text">
+        <li><a href="#"><i class="fa fa-rocket"></i><span class="plan">Plans</span></a></li>
+        <li><a href="#"><i class="fa fa-th-large"></i><span class="workspace">Workspaces</span></a></li>
+        <li><a href="#"><i class="fa fa-life-ring"></i><span class="help">Help</span></a></li>
+        <li><a href="#"><img src="../../assets/ios-57.png" style="height:24px; width:24px;margin-right: -37px;"><span>Launch</span></a></li>
+      </span>
+    </ul>
+  </div>
+</nav>
+<div class="abc">
+  <div class="wrap-class">
+    <div class="sec-wrap">
+      <div class="div-sec">
+        <h3>Manage members<i class="fa fa-cloud-download"></i><button class="btn btn-success pull-right" [routerLink]="['../invite']">Invite
+            People
+          </button></h3>
+      </div>
+      <div class="wrap">
+        <div class="searchContainer">
+          <i class="fa fa-search searchIcon"></i>
+          <input class="searchBox" type="text" name="search" placeholder="Search current members" [(ngModel)]="userFilter.name">
+        </div>
+        <div class="filterContainer">
+          <!-- <button class="c-button c-button--outline c-button--medium p-admin_table-wrapper__filter_btn null--outline null--medium"
+            type="button" data-qa="admin_member_unified_filter_trigger"> -->
+          <i class="fa fa-sliders filerIc" type="filters" aria-hidden="false"></i>
+          <div class="p-admin_table-wrapper__filter_btn_copy">Filters</div>
+          <i class="fa fa-caret-down" type="chevron-medium-down" aria-hidden="false" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="true" tabindex="-1"></i>
+          <div class="dropdown-menu div-area" aria-labelledby="dropdownMenuLink">
+            <div class="main-div">
+              <div>
+                <span class="filter-name">Filter By
+                  <span><a href="#" class="div-head" role="button" (click)="getUsers()">Reset filters</a></span>
+                </span>
+              </div>
+              <hr>
+              <div class="row" id="filters">
+                <div class="col-md-4 line line-ac">
+                  <div id="selectitem">
+                    <h6>Account type</h6>
+                    <input type="checkbox" rel="Workspace_Owner" (click)="getOwner()" class=""><span class="filter-span">Workspace Owner</span><br>
+                    <input type="checkbox" rel="Workspace_Admin" (click)="getAdmin()" class=""><span class="filter-span">Workspace Admin</span><br>
+                    <input type="checkbox" rel="Full_Member" (click)="getMember()" class=""><span class="filter-span">Full Member</span><br>
+                    <input type="checkbox" rel="Guest" (click)="getGuest()" class=""><span class="filter-span">Guest</span>
+                  </div>
+                </div>
+                <div class="col-md-4 line line-ac">
+                  <div class="selectitem">
+                    <h6>Biiling status</h6>
+                    <input type="checkbox" rel="Active" (click)="getActive()" class=""><span class="filter-span">Active</span><br>
+                    <input type="checkbox" rel="Inactive" (click)="getInactive()" class=""><span class="filter-span">Inactive</span>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="">
+                    <h6>Authentication</h6>
+                    <input type="checkbox" class=""><span class="filter-span">Two-factor(2FA)</span><br>
+                    <input type="checkbox" class=""><span class="filter-span">SSO</span><br>
+                    <input type="checkbox" class=""><span class="filter-span">Default (email & password)</span>
+                  </div>
+                </div>
+
+              </div>
+              <hr>
+              <div>
+                <input type="checkbox" class=""><span class="filter-span">Show deactivated accounts</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="table-start" id="table-st">
+    <table class="table">
+      <thead>
+        <tr>
+          <!-- <th style="visibility:collapse;">RecipeId</th> -->
+          <th class="name-th">Name<i class="fa fa-arrow-down"></i></th>
+          <th class="th-name">Account Type</th>
+          <th class="th-name">Billing status</th>
+          <th class="th-name">Authentication</th>
+          <th class="th-name"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users | filterBy: userFilter" class="fullmembr">
+          <td>
+            <div class="img-usr">
+              <img src="../../assets/img.jpg" style="height:40px;width:45px; margin-right: 0px; margin-top: 0px;" class="user-img"><br></div>
+            <div class="div-display">
+              <div class="div-name">{{user.name}} <br></div>
+              <div class="div-email">{{user.name}}. {{user.email}}</div>
+            </div>
+
+          </td>
+          <td class="td-name" id="fullmem" class="Full_Member" *ngIf="user.account_Type==0">| Workspace Owner</td>
+          <td class="td-name" class="Workspace_Admin" *ngIf="user.account_Type==1">| Workspace Admin</td>
+          <td class="td-name" id="fullmem" class="Full_Member" *ngIf="user.account_Type==2">| Full Member</td>
+          <td class="td-name" class="Workspace_Admin" *ngIf="user.account_Type==3">| Guest</td>
+          <td class="td-name" class="Active" *ngIf="user.billing_Status==0">Active</td>
+          <td class="td-name" class="Inactive" *ngIf="user.billing_Status==1">Inactive</td>
+          <td class="td-name">{{user.authentication}}</td>
+          <td class="td-name"><i class=" fa fa-ellipsis-h"  href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="true" tabindex="-1"></i>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="#" (click)="changeToAdmin(user.id)" role="button" id="adminbtn">Change to Admin</a>
+              <a class="dropdown-item" href="#"(click)="changeToGuest(user.id)" role="button" id="guestbtn">Change to Guest </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#" style="color: red;">Deactivate account</a>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

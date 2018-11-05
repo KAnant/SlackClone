@@ -1,0 +1,279 @@
+.container-con {
+position: absolute;
+top: -70px;
+left: 310px;
+right: 0;
+bottom: 0;
+overflow-x: hidden;
+overflow-y: auto;
+display: flex;
+justify-content: center;
+align-items: flex-start;
+padding: 15vh 2rem 2rem;
+display: block;
+}
+
+.container-con-form {
+    width: 640px;
+    max-width: 100%;
+    padding-bottom: 2rem;
+    padding-top: 3rem;
+}
+
+.fa-close {
+    /* position: absolute; */
+    top: 1rem;
+    left: 0;
+    width: 100%;
+    display: block;
+    font-size: 20px;
+}
+
+/* .close-btn {
+
+    float: right;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .5;
+    padding-top: 85px;
+    padding-right: 20px;
+} */
+
+.close-btn {
+    /* position: absolute; */
+    top: 2.25rem;
+    left: 0;
+    width: 100%;
+    display: block;
+    font-size: 15px;
+}
+
+.pull-right {
+    position: sticky;
+    top: 0rem;
+    width: 4rem;
+    height: 4rem;
+    z-index: 1;
+    text-align: center;
+    cursor: pointer;
+    color: #717274;
+    font-size: .8rem;
+    line-height: 1.2rem;
+    border-radius: 100%;
+    right: 2rem;
+}
+
+.pull-right:hover {
+    background-color: #ebebf3;
+    border-radius: 2rem;
+}
+
+.cls-btnn {
+    padding-top: 13px;
+}
+.fa-paper-plane-o {
+    display: block;
+    font-size: 28px;
+    color: #2d9ee0;
+    padding-bottom: 15px;
+    transform: rotate(-45deg);
+}
+
+.body-wrap {
+    width: 100%;
+    display: inline-block;
+}
+.header_invite {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    letter-spacing: -.5px
+}
+
+.size-font {
+    
+    text-align: center !important;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    letter-spacing: -.5px
+}
+
+.light-font {
+    font-weight: 200 !important;
+    font-family: NotoSansJP,Slack-Lato,appleLogo,sans-serif;
+}
+
+.heavy-font {
+    font-weight: 700 !important;
+}
+
+.col-1 {
+    width: 49.2%;
+}
+
+label {
+    font-weight: 700;
+    margin: 0 0 .25rem;
+    display: block;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.body-table {
+    margin-top: 48px;
+    width: 100%;
+    /* text-align: center; */
+}
+
+.table-header {
+    display: flex;
+}
+
+.table-th {
+     display: flex;
+}
+.email-aadr {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.full-width {
+    max-width: 100% !important;
+    width: 100% !important;
+}
+
+.table-header label {
+    padding-right: 0;
+    margin-bottom: 0;
+}
+
+.delete_row {
+position: absolute;
+right: -30px;
+color: #717274;
+display: block;
+width: 2.75rem;
+height: 2.75rem;
+line-height: 2.75rem;
+text-align: center;
+top: 1.6em;
+}
+
+.tb2 {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 25px;
+}
+
+.dt2 {
+    position: absolute;
+right: -30px;
+color: #717274;
+display: block;
+width: 2.75rem;
+height: 2.0rem;
+line-height: 2.75rem;
+text-align: center;
+top: 0.6em;
+}
+
+-moz-placeholder {
+    color: #919193;
+    font-size: 1rem;
+}
+
+.form-control::placeholder {
+    color: #bdc5cc;
+    opacity: 1;
+}
+
+.fa-close {
+    color: #717274;
+}
+
+.add-row {
+    margin: 9px 17px 32px;
+    font-size: 1rem;
+}
+
+.link_color {
+    color: #717274 !important;
+}
+
+.members_channel {
+    margin: 9px 17px 32px;
+    font-size: 1rem;
+}
+
+.greigh {
+    color: #717274 !important;
+}
+
+.btn_large {
+    float: right;
+    background-color: #008952;
+}
+
+.tb2:hover {
+    background-color: #ffdcdc;
+    border-radius: .25rem;
+}
+
+.cls-btn:hover {
+    color: #d72b3f;
+}
+
+.fa-plus-circle {
+    padding-right: 10px;
+    text-decoration: none;
+}
+
+#admin_invites_alert {
+    font-size: .9rem;
+    margin-bottom: 2.5rem;
+    padding: .75rem .5rem;
+    background: rgba(45,158,224,.06);
+    border: 1px solid #2d9ee0;
+    border-radius: 4px;
+    line-height: 1.375em;
+}
+
+.inline {
+    display: inline !important;
+}
+
+.text-dec {
+    text-decoration: none;
+}
+
+.fa-user-plus {
+    color: #2d9ee0;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.share_invite_link_container a {
+    color: #717274;
+}
+
+.fa-link {
+    font-size: 20px;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.con {
+    padding-top: 10px;
+    margin: 9px 17px 32px;
+}
+
+#btnadd {
+    cursor: pointer;
+}
+
+/* .fix-esc {
+    position: sticky;
+    float:right;
+} */
